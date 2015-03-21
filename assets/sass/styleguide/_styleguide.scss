@@ -1,0 +1,53 @@
+/**
+ * @file
+ * Style rules for the look and feel of the styleguide.
+ */
+
+$styleguide-slug: 2em;
+
+.styleguide-header {
+  padding-top: $styleguide-slug;
+  padding-bottom: $styleguide-slug;
+  margin-bottom: $styleguide-slug;
+  background: $navy;
+  a {
+    border-bottom: none;
+  }
+}
+
+.styleguide-header__image {
+  height: 24px;
+}
+.styleguide-breadcrumbs {
+  @include adjust-font-size-to($label, 1);
+}
+.styleguide-body {
+  h1,h2,h3,h4,h5,h6,p,ul,ol { max-width: 760px; }
+  margin-bottom: $styleguide-slug;
+}
+.styleguide-footer {
+  background: $white;
+  @include adjust-font-size-to($crumb, 1);
+  margin-top: $styleguide-slug * 2;
+  margin-bottom: $styleguide-slug * 2;
+}
+.styleguide-example {
+  background: $off-white-dark;
+  padding: $styleguide-slug * 2 0;
+  margin-bottom: $styleguide-slug;
+  @extend %clearfix;
+}
+.styleguide-markup {
+  margin-bottom: $styleguide-slug;
+}
+.styleguide-swatch {
+  @include box-sizing(border-box);
+  padding: 1em;
+  &.reverse {
+    color: $white;
+  }
+  &.border {
+    border: 1px solid #dcdcdc;
+  }
+  margin-bottom: $zen-gutter-width;
+}

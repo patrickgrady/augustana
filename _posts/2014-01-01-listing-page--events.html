@@ -1,0 +1,38 @@
+---
+layout: default
+title: Listing Page (Events)
+description: Sample listing page with Events content and pagination.
+id-name: listing
+categories: Templates
+---
+
+<div class="container page">
+  <article class="l-66-33--1">
+    <header>
+      <h1>Upcoming Events</h1>
+    </header>
+
+    <figure class="featured">
+      <article class="illustrated-list-item">
+        <p class="metadata"><span class="month">May</span> 22—24, 2014</p>
+        <h1 class="illustrated-list-item__title"><a href="#">Commencement Weekend</a></h1>
+        <figure class="illustrated-list-item__image">
+          <img src="{{ site.baseurl }}/assets/imgs/commencement-16x9.jpg" />
+        </figure>
+        <p class="illustrated-list-item__summary">Senior Julia Blue will speak on behalf of students and Dr. Gene Hoyme will deliver the commencement address during Augustana's 2014 Commencement, set for Saturday, May 24, at the Elmen Center. View the complete schedule of events, including details for the live webcast.</p>
+      </article>
+    </figure>
+
+    {% include illustrated-list--events.html %}
+    {% include illustrated-list--events.html %}
+    {% include illustrated-list--events.html %}
+    {% include illustrated-list--events.html %}
+    <hr />
+    {% include pagination.html %}
+  </article>
+
+  <aside class="l-66-33--2">
+    {% include side-nav--no-related.html %}
+  </aside>
+
+</div>

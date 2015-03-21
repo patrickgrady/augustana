@@ -1,0 +1,6 @@
+name: Augustana
+markdown: redcarpet
+pygments: true
+permalink: none
+baseurl: /augustana
+url: http://localhost:4000

@@ -1,0 +1,84 @@
+/**
+ * @file
+ * Pagination Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.pager-item {
+  @include adjust-font-size-to($label);
+  display: block;
+  float: left;
+  background: $active-20;
+  border: 1px solid $active-40;
+  @include border-radius(3px);
+  text-decoration: none;
+  line-height: 36px;
+  width: 36px;
+  text-align: center;
+  margin-right: 6px;
+  &:hover {
+    background: $gold;
+  }
+}
+
+.pager-item .ss-icon {
+  @include adjust-font-size-to($crumb);
+  vertical-align: middle;
+  position: relative;
+  top: 2px;
+}
+
+.pager-item.is-active {
+  font-weight: 700;
+  background: $white;
+  color: $navy;
+  cursor: default;
+  }
+
+.pager-item.is-disabled {
+  background: $active-20;
+  color: $active-40;
+  cursor: default;
+}
+
+
+/*
+.pager {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    @include adjust-font-size-to($label, 1);
+    padding: rhythm(.5) rhythm(.75);
+    display: inline;
+  }
+}
+.pager-current {
+  background: $gold;
+}
+.pager-item--first:before,
+.pager-item--previous:before,
+.pager-item--next:after,
+.pager-item--last:after {
+  @include adjust-font-size-to($crumb, 1);
+  vertical-align: middle;
+  font-family: SSStandard;
+  color: $link-color;
+}
+.pager-item--first:before {
+  content: 'rewind';
+  margin-right: .5em;
+}
+.pager-item--previous:before {
+  content: 'directleft';
+  margin-right: .5em;
+}
+.pager-item--next:after {
+  content: 'directright';
+  margin-left: .5em;
+}
+.pager-item--last:after {
+  content: 'fastforward';
+  margin-left: .5em;
+}
+*/

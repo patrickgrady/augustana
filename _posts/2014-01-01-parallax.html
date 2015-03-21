@@ -1,0 +1,60 @@
+---
+published: false
+layout: default
+title: Parallax Page
+description: Proof of concept for parallax scrolling feature.
+categories: Templates
+---
+<body id="parallax">
+  <header></header>
+
+  <div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp1.jpg" data-width="1600" data-height="800"></div>
+  <section class="text-area">
+    <h1>We are Augustana</h1>
+    <p>Augustana is a <a href="#">nationally recognized</a> liberal arts school for those who aspire for more than the ordinary; for those who are committed to making our world a better place.<br/>
+    <a href="#">Learn More &rarr;</a></p>
+  </section>
+
+  <div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp2.jpg" data-width="1600" data-height="800"></div>
+  <section class="text-area">
+    <h1>Explore Augustana</h1>
+    <p>Located in Sioux Falls South Dakota — a city of 160,000 with a robust economy, thriving business environment, and vibrant arts scene — Augustana offers more than <a href="#">50 majors and pre-professional specializations</a> within a <a href="#">4-1-4 academic calendar</a> and is home to nearly 1,800 students from 30 states and 44 countries around the globe.<br/>
+    <a href="#">Learn More &rarr;</a></p>
+  </section>
+
+  <div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp3.jpg" data-width="1600" data-height="800"></div>
+  <section class="text-area">
+    <h1>Discover our difference</h1>
+    <p>With a student-to-faculty ratio of 11:1, the personal atmosphere of the classrooms at Augustana foster open dialogue, interaction, and critical thinking. Our professors know your name, value your interests, engage you in conversation, and care if you miss class. They are fully committed to help you explore your passions and discover your calling; leading to a fulfilling career.<br/>
+    <a href="#">Learn More &rarr;</a></p>
+  </section>
+
+  <div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp4.jpg" data-width="1600" data-height="800"></div>
+  <section class="text-area">
+    <h1>Create your experience</h1>
+    <p>At Augustana, each student has the ability to personalize their educational experience through, <a href="#">recreational sports</a>, <a href="#">residential communities</a>, <a href="#">clubs and organizations</a>, <a href="#">internships</a>, <a href="#">student teaching</a>, <a href="#">off-campus study</a>, <a href="#">hands-on research</a>, <a href="#">the Civitas honors program</a>, or our <a href="#">Study Abroad programs</a> — designed to give you a first-hand look at other cultures, traditions and economies in order to broaden your perspective.<br/>
+    <a href="#">Learn More &rarr;</a></p>
+  </section>
+
+  <div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp5.jpg" data-width="1600" data-height="800"></div>
+  <section class="text-area">
+    <h1><em>Go</em> Viking</h1>
+    <p>Our high four-year graduation rates, annual scholarship/grant assistance, and pricing $10,928 (on average) below our competitors, makes Augustana College an exceptional value with considerable lifetime returns. Ninety-eight percent of our graduating class of 2013 reported that they had jobs related to their field of study within 8 months of graduation.<br/>
+    <a href="#">Apply Now! &rarr;</a></p>
+  </section>
+
+  <footer></footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/jquery.imageScroll.js"></script>
+  <script type="text/javascript">
+  var touch = Modernizr.touch;
+  $('.img-holder').imageScroll({
+    //cut smaller images and add "data-image-mobile:" attribute for image swap
+    //imageAttribute: (touch === true) ? 'image-mobile' : 'image',
+    touch: touch
+  });
+  </script>
+
+</body>
+</html>

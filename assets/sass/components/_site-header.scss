@@ -1,0 +1,232 @@
+/**
+ * @file
+ * Nav-slider Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.nav-slider {
+  @include background(linear-gradient(left, rgba(#000000, .98), darken($black, 7%) 8px));
+  //background: darken($black, 9%);
+  position: fixed;
+  top: 0;
+  right: -280px;
+  bottom: 0;
+  width: 280px;
+  padding: 52px 30px;
+  overflow-y: auto;
+  @include trans($timing, $easing);
+  @include box-sizing(border-box);
+  nav {
+    margin-bottom: rhythm(2);
+  }
+  & .trigger {
+    position: absolute;
+    top: 15px;
+    right: 29px;
+  }
+  & .navlink {
+    display: block;
+    float: none;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 2em;
+    color: rgba($white, .5);
+    border-bottom: 1px dotted rgba($white, .15);
+    &:hover {
+      color: $gold;
+      border-bottom: 1px dotted rgba($gold, .33);
+    }
+  }
+  .navlink.is-active {
+    color: $gold;
+    border-bottom: 1px dotted rgba($gold, .33);
+  }
+}
+.nav-slider--show {
+  right: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  right: 0;
+  @include trans($timing, $easing);
+}
+.content-wrapper--move {
+  right: 280px;
+}
+
+.site-header {
+  background: $navy;
+  & a {
+    border-bottom: none;
+  }
+  & .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include breakpoint($bp2){
+      padding-top: 24px;
+      padding-bottom: 19px;
+    }
+    @include breakpoint($bp3){
+      padding-top: 30px;
+      padding-bottom: 24px;
+    }
+  }
+}
+
+.site-logo {
+  display: block;
+  float: left;
+  background: url("../imgs/aug-logo.png") no-repeat 0 50%;
+  background-size: contain;
+  width: 126px;
+  height: 30px;
+  @include breakpoint($high-res){
+    background: url("../imgs/aug-logo.svg") no-repeat 0 50%;
+  }
+}
+
+.site-header .site-logo {
+  @include breakpoint($bp1){
+    width: 144px;
+    height: 30px;
+  }
+  @include breakpoint($bp2){
+    width: 164px;
+    height: 30px;
+    position: relative;
+    bottom: 4px;
+  }
+  @include breakpoint($bp3){
+    width: 204px;
+    height: 34px;
+    position: relative;
+    bottom: 8px;
+  }
+}
+
+.nav--mobile {
+  float: right;
+  & a {
+    display: block;
+    float: left;
+    @include box-sizing(border-box);
+    text-decoration: none;
+    border: 1px solid rgba($white, .28);
+    @include border-radius(3px);
+    padding: 0 .5em;
+    margin-left: .5em;
+    height: 30px;
+    line-height: 33px;
+    font-size: 15px;
+    color: $white;
+    &:hover {
+      color: $gold;
+      border: 1px solid rgba($gold, .4);
+    }
+  }
+  @include breakpoint($bp2){
+    display: none;
+  }
+}
+
+.nav--primary {
+  display: none;
+  float: right;
+  & a {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-decoration: none;
+    color: $off-white;
+    margin-left: 1em;
+    height: 30px;
+    line-height: 30px;
+    &:hover {
+      color: $gold;
+    }
+  }
+  @include breakpoint($bp2){
+    display: block;
+  }
+  @include breakpoint($bp3){
+    position: relative;
+    bottom: 0px;
+  }
+}
+
+.nav--secondary {
+  display: none;
+  clear: both;
+  border-top: 1px solid rgba($white, .18);
+  margin-top: 42px;
+  & a {
+    float: left;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-top: 12px;
+    text-decoration: none;
+    color: $navy-50;
+    &:hover {
+      color: $gold;
+    }
+  }
+  @include breakpoint($bp2){
+    display: block;
+  }
+}
+
+.nav--secondary__portals {
+  float: left;
+  & a {
+    margin-right: 1.75em;
+  }
+}
+.nav--secondary__utilities {
+  float: right;
+  & a, form {
+    margin-left: 1.75em;
+  }
+}
+
+.search--header {
+  float: right;
+  position: relative;
+  font-size: 13px;
+  margin: 9px 0 0 12px;
+  line-height: 24px;
+}
+#site-search {
+  height: 24px;
+  line-height: 24px;
+  border: none;
+  padding-top: 4px;
+}
+#search--header__button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2em;
+  height: 24px;
+  color: $gray-medium;
+  background-color: $white;
+  border: none;
+  & .ss-icon {
+    position: relative;
+    top: 3px;
+    left: 1px;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $navy;
+    background-color: $gold;
+    border: none;
+  }
+}
+.search--header.is-mobile {
+  width: 100%;
+  margin-bottom: rhythm(1.75);
+}

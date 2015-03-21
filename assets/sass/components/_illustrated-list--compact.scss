@@ -1,0 +1,62 @@
+/**
+ * @file
+ * Illustrated-list--compact Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.compact-illustrated-list {
+  @include background(linear-gradient(top, rgba(#000000, .98), darken($black, 7%) 16px));
+  //background: darken($black, 9%);
+  padding-top: rhythm(1);
+  padding-bottom: rhythm(1.5);
+  & a {
+    color: rgba($white, .5);
+    border-bottom: 1px dotted rgba($white, .15);
+    &:hover {
+      color: $gold;
+      border-bottom: 1px dotted rgba($gold, .33);
+    }
+  }
+  .compact-illustrated-list__title {
+    @include trailer(.5);
+    & a {
+      border-bottom: none;
+    }
+  }
+  .illustrated-list-item {
+    @include trailer(1, $text);
+  }
+  .illustrated-list-item__image {
+    width: 85px;
+    @include breakpoint(480px){
+      width: 25%;
+    }
+    @include breakpoint(680px){
+      width: 110px;
+    }
+  }
+  .illustrated-list-item__metadata {
+    @include adjust-font-size-to($crumb, 1.5);
+    @include trailer(0);
+    @include breakpoint(480px){
+      @include adjust-font-size-to($label, 1.5);
+    }
+    @include breakpoint(600px){
+      @include adjust-font-size-to($crumb, 1.5);
+    }
+    color: $gray-medium;
+    font-weight: 400;
+  }
+  .illustrated-list-item__title {
+    @include adjust-font-size-to($label, 1.5);
+    @include breakpoint(480px){
+      @include adjust-font-size-to($text, 1.75);
+    }
+    @include breakpoint($bp1){
+      @include adjust-font-size-to($label, 1.5);
+    }
+    & a {
+      border-bottom: none;
+    }
+  }
+}

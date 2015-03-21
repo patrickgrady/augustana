@@ -1,0 +1,79 @@
+---
+layout: default
+title: Portal Page
+description: The portal page template curates links to relevant content based on audience-type and presents them in a listing style.
+categories: Templates
+id-name: portal
+---
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-portal.jpg" data-width="1600" data-height="900" data-cover-ratio="0.5"></div>
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">Current Students Portal</h1>
+
+    <article class="hero-inline-figure--right">
+      <a href="#"><img src="{{ site.baseurl }}/assets/imgs/sioux-falls-2-16x9.jpg"/></a>
+      <h1 class="hero-inline-figure__title">
+        <a href="#">Forbes Gives Top Marks to Sioux Falls and Augustana</a>
+      </h1>
+    </article>
+
+    <p>Welcome to the current students portal. Below you'll find helpful links to content relevant to you from around the site. In vestibulum blandit nulla, at dignissim diam rutrum eget. Etiam non pulvinar tortor, ac bibendum justo. Nunc ultrices leo convallis, aliquam orci vitae, convallis orci. Ne sea fugit laudem labore. Pro amet augue everti ex, at inermis urbanitas vel. Mei nisl viderer salutatus id, ut est diam vivendo, duo ne postulant periculis vituperata. Modo laudem duo ut, solet quidam cetero eum ut.</p>
+  </div>
+</section>
+
+<section class="page--offwhite">
+  <div class="container">
+    <article class="l-66-33--1">
+      {% include accordion.html %}
+    </article>
+
+    <aside class="l-66-33--2">
+    </aside>
+  </div>
+</section>
+
+<!-- Multi level accordion -->
+<script type="text/javascript">
+  $(function() {
+    // Find the accordion
+    var accordion = $(".accordion");
+    // Find the the links that are triggers.
+    var triggers = accordion.find('.accordion-trigger');
+
+    triggers.each(function() {
+      // store this trigger for later use.
+      var trigger = $(this);
+      // Find the parent of the trigger link.
+      var trigger_parent = trigger.parent();
+      // Find if there is a child accordion container.
+      var child_container = trigger_parent.find('> .accordion-container');
+
+      trigger.addClass('is-closed');
+
+      // Attach a click function to each trigger.
+      trigger.on('click', function(e) {
+        // Prevent the link from clicking.
+        e.preventDefault();
+        // Find the sibling triggers by determing what links are in the parent
+        // that were not clicked.
+        sibling_triggers = trigger_parent.parent('.accordion-container').find('.accordion-trigger').not(e.target);
+        // Slide up all of the sibling elements.
+        sibling_triggers.parent().find('.accordion-container').slideUp(100);
+
+        sibling_triggers.addClass('is-closed');
+        sibling_triggers.removeClass('is-open');
+
+        if(trigger.hasClass('is-open')){
+          child_container.slideUp(100);
+        }
+        else {
+          // Slide the child container down.
+          child_container.slideDown(100);
+        }
+
+        trigger.toggleClass('is-open is-closed');
+      });
+    });
+  });
+</script>

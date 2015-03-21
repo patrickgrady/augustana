@@ -1,0 +1,244 @@
+/**
+ * @file
+ * Define your custom Sass mixins and extends here.
+ * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+/* ==============================================================
+   Typography grooming extends
+   ========================================================== */
+
+/* Tight tracking */
+%track-in { letter-spacing: -0.01em; }
+
+/* Open tracking */
+%track-out { letter-spacing: 0.133em; }
+
+/* Style larger text with a tighter tracking, change weight, etc.  */
+%display-type { @extend %track-in; }
+
+/* Style all caps with a slightly open tracking. */
+%allcaps { @extend %track-out; text-transform: uppercase; }
+
+/* Use Garamond Bold */
+%garamond {
+  font-family: $garamond;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Use Alright Sans */
+%alright-sans {
+  font-family: $alright-sans;
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+/* ==========================================================
+   Clearfix extend
+   ========================================================= */
+
+/**
+ * Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+ * do not get compiled uless they are called - removing the nesting issues that
+ * can otherwise occur with extends.
+ */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+/* ========================================================
+   Visually hidden extend
+   ======================================================= */
+
+/**
+ * Element-invisible as defined by snook.ca
+ * @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.element-invisible,
+%element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}
+
+/* =========================================================
+   Transition mixin
+   ======================================================== */
+
+@mixin trans($timing, $easing) {
+  -webkit-transition: all $timing $easing;
+  -moz-transition: all $timing $easing;
+  -o-transition: all $timing $easing;
+  transition: all $timing $easing;
+}
+
+
+/* ========================================================
+   Icon extends
+   ====================================================== */
+
+
+/**
+ * Adds an arrow icon after off-site redirect links
+ */
+.off-site,
+%off-site {
+  &:after {
+    content: " redirect";
+    font-family: "ssstandard";
+    font-size: 13px;
+    line-height: 0;
+    vertical-align: middle;
+    margin-left: 1px;
+  }
+}
+
+/**
+ * Adds a calendar icon before the "calendar" navlink
+ */
+.calendar,
+%calendar {
+  &:before {
+    content: "calendar";
+    font-family: "ssstandard";
+    font-size: 13px;
+    line-height: 0;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+}
+
+/**
+ * Adds a gift icon before the "make a gift" navlink
+ */
+.gift,
+%gift {
+  &:before {
+    content: "";
+    float: left;
+    height: 16px;
+    width: 15px;
+    line-height: 0;
+    vertical-align: middle;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+    background-repeat: no-repeat;
+    //custom gift icon, blue
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANVJREFUeNpiYMACansXKKDxHYD4PRAbIIszoSkyAOLzQOZ8JDEBKB9E70c2gAlJUQOQAmkESYJsKoBK1QMxzCUoBrAgWXwBiB8gKawHKvoApAvQfLUBiEHiDIwg/6BJgmxywBIUB4B4IkwjyCKQzfsZiAMOaIY2gp3dXJzAiCXE/0OZjkD5A2hy++F+xuJ0ZACKAXQxAeQA2w/1EzYQD8T+yIZBNW9EdyKKs6HYAd3J0GhFTSSkgqGuGRQI0EyAE0DTNDzHMUIF38PijkhQCEw4EwACDAARdlKW7C3NTgAAAABJRU5ErkJggg==);
+  }
+  &:hover:before {
+    //custom gift icon, gold
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANBJREFUeNrUU9sNwjAMdCoG6AhMgDpC2KhMULoBTMAKbNBuAGICNmg3COfKrhwrSMAfJ52S+G0nISogPWjrzhGcwMbKK2fUgDdsL0ZWy5nXwQaojNERCzuykjO1oupArSQLsDGJ7+DTGHYwmrG2rqsryHIK3I9TcqZYGMUIntWRE7Fzot/QL2WHHYXCxDXoHvrR6Ya150LpFnwDHrX2nExPFtEMcrbBxLn3JWZlC6MvWa41fyTf4t+deQjyCd5C3vT644IIJ727D3HAwzm9BBgAlitX/PkEcVUAAAAASUVORK5CYII=);
+    @include trans($timing, $easing);
+  }
+}
+
+
+/* =========================================================
+   Button extend
+   ======================================================== */
+
+.button,
+%button {
+  display: inline-block;
+  @include box-sizing(border-box);
+  text-decoration: none;
+  border: 1px solid rgba($white, .28) !important;
+  @include border-radius(3px);
+  padding: 0 .5em;
+  height: 30px;
+  line-height: 31px;
+  font-size: 15px;
+  color: rgba($white, .9) !important;
+  &:hover {
+    color: $navy !important;
+    background: rgba($white, .96);
+    //border: 1px solid rgba($gold, .4);
+  }
+}
+
+/* =========================================================
+   Call-to-action extend
+   ======================================================== */
+
+.call-to-action,
+%call-to-action {
+  display: inline-block;
+  @include box-sizing(border-box);
+  @include border-radius(3px);
+  margin: rhythm(1.5) 0;
+  padding: .25em .75em 0 .75em;
+  line-height: 2em;
+  font-size: $label;
+  @include breakpoint($bp1){
+    font-size: $text;
+  }
+  text-decoration: none;
+  color: $navy !important;
+  background: $gold;
+  border: 1px solid darken($gold, 6%) !important;
+  &:hover {
+    color: $link-color !important;
+    background: $active-20;
+    border: 1px solid $active-40 !important;
+  }
+  &:after {
+    content: "directright";
+    font-family: "ssstandard";
+    font-size: 60%;
+    line-height: 0;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+}
+
+/* =========================================================
+   featured content box
+   ======================================================== */
+
+.featured,
+%featured {
+  @include box-sizing(border-box);
+  background: $off-white;
+  padding: rhythm(1.75) rhythm(1.75) rhythm(1.625) rhythm(1.75);
+  width: 100%;
+  & article {
+    margin-bottom: 0;
+  }
+  @include trailer(3, $text);
+}

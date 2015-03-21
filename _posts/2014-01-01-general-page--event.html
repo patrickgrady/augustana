@@ -1,0 +1,43 @@
+---
+layout: default
+title: General Page (Event)
+description: Event detail page with a 16:9 lede image, date, times, location, ticket info, and contact information.
+categories: Templates
+id-name: general
+---
+
+<div class="container page">
+  <article class="l-66-33--1">
+    <header>
+      <p class="metadata"><span class="month">May</span> 9, 2014</p>
+      <h1>Concerto-Aria Concert</h1>
+    </header>
+
+    <figure>
+      <img src="{{ site.baseurl }}/assets/imgs/concert.jpg"/>
+    </figure>
+
+    {% include event-details.html %}
+
+    <h3 class="element-invisible">Event Description</h3>
+    <p>The annual Concerto-Aria Concert will feature performances by the four student winners of the Augustana Concerto-Aria Competition and the Augustana Orchestra. The concert will begin at 7:30 p.m. on Friday, May 9, at the <a href="#">Harrisburg Performing Arts Center</a>.</p>
+    <p>Tickets are $15 for adults, $10 for seniors, and are free for students K-12 and those with an Augustana ID. Tickets are available at <a href="#">www.augietickets.com</a>.</p>
+    <p>Students performing as 2014 Concerto-Aria competition winners are:</p>
+    <ul>
+      <li><strong>Carryn Kennedy</strong> (soprano), class of 2016, a native of Centennial, Colo., and a student of Dr. Lisa Grevlos, performing Jacques Offenbach: “Ella a fui, la tourterelle!” from "Tales of Hoffmann".</li>
+      <li><strong>Spencer Kruse </strong> (oboe), class of 2015, a native of Pipestone, Minn., and a student of Jeffrey Paul, performing Ralph Vaughan Williams: "Oboe Concerto".</li>
+      <li><strong>Michelle Ritter</strong> (piano), class of 2015, a native of Andover, Minn., and a student of Dr. Rick Andrews, performing Sergei Rachmaninoff: "Piano Concerto no. 2" (first movement).</li>
+      <li><strong>Sarah Stevens </strong>(mezzo-soprano), class of 2016, a native of Kansas City, Mo., and a student of Dr. Lisa Grevlos, performing George Frideric Handel: “Lasciach’iopianga” from Rinaldo.</li>
+    </ul>
+    <p>The Concerto-Aria concert will begin with Igor Stravinsky’s "Firebird Suite," performed by the <a href="#">Augustana Orchestra</a> under the direction of <a href="#">Dr. Christopher Stanichar</a>. The group will also be featured with The Russian Easter Overture written by Russian composer Nikolai Rimsky-Korsakov.</p>
+    <p>Stanichar is an active conductor, composer, and educator. He is in his sixth year as Associate Professor and Director of Orchestras where he conducts the Augustana Orchestra and Augustana College and Community Orchestra. Recognized for his excellence, he was awarded the Jane and Charles Zaloudek Faculty Research Fellowship in 2011. He also conducts the South Dakota Symphony Youth Orchestra (SDSYO), Northwest Iowa Symphony Orchestra (NISO), and Worthington Area Symphony Orchestra in Minnesota.</p>
+    <hr/>
+    <p class="event-contact">For more information contact Jennifer Miller at 605.376.5959 or <a href="#">xoq23@live.com</a>.</p>
+    {% include social-buttons.html %}
+  </article>
+
+  <aside class="l-66-33--2">
+    {% include side-nav.html %}
+  </aside>
+
+</div>

@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Note Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.note {
+  @extend %featured;
+  @include trailer(1, $text);
+  background: $note;
+  @include breakpoint(540px){
+    margin-top: rhythm(.5, $text);
+  }
+  &.is-left {
+    float: left;
+    margin-right: rhythm(2);
+    width: 320px;
+  }
+  &.is-right {
+    float: right;
+    margin-left: rhythm(2);
+    width: 320px;
+  }
+  & p {
+    margin-bottom: 0;
+  }
+  & a {
+    color: $link-color;
+    border-bottom: 1px dotted rgba($link-color, .15);
+    &:hover {
+      color: $hover-color;
+      border-bottom: 1px dotted rgba($hover-color, .33);
+    }
+  }
+  .note__title {
+    @include adjust-font-size-to($crumb, .75);
+    @include leader(0);
+  }
+  hr {
+    border-top: 1px solid rgba($black, .15);
+    margin: 0 0 rhythm(.625, $crumb) 0;
+  }
+  .note__text {
+    @include adjust-font-size-to($label, 1.5);
+  }
+}

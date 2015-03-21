@@ -1,0 +1,37 @@
+---
+layout: default
+title: Listing Page (News)
+description: Sample listing page with News content and pagination.
+id-name: listing
+categories: Templates
+---
+<div class="container page">
+  <article class="l-66-33--1">
+    <header>
+      <h1>Latest News</h1>
+    </header>
+
+    <figure class="featured">
+      <article class="illustrated-list-item">
+        <p class="metadata"><span class="month">May</span> 22, 2014</p>
+        <h1 class="illustrated-list-item__title"><a href="#">Commencement Weekend Begins with 'Suite' Farewell</a></h1>
+        <figure class="illustrated-list-item__image">
+          <img src="{{ site.baseurl }}/assets/imgs/farewell-16x9.jpg" />
+        </figure>
+        <p class="illustrated-list-item__summary">Nearly 200 members of the Class of 2014 joined President Rob and Angie Oliver at Kirkeby-Over Stadium Thursday night for a "suite" farewell ahead of Commencement on Saturday. Learn more and view photos!</p>
+      </article>
+    </figure>
+
+    {% include illustrated-list--news.html %}
+    {% include illustrated-list--news.html %}
+    {% include illustrated-list--news.html %}
+    {% include illustrated-list--news.html %}
+    <hr />
+    {% include pagination.html %}
+  </article>
+
+  <aside class="l-66-33--2">
+    {% include side-nav--no-related.html %}
+  </aside>
+
+</div>

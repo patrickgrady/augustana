@@ -1,0 +1,42 @@
+<!--wraps every styleguide page and renders jekyll content in the middle-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ site.name }} : Styleguide</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/modernizr.custom.22576.js"></script>
+    <!-- Scripts for RRSB -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/vendor/jquery.1.10.2.min.js"><\/script>')</script>
+    <script src="{{ site.baseurl }}/assets/js/rrssb.min.js"></script>
+  </head>
+
+  <body>
+
+  <header class="styleguide-header">
+    <div class="container">
+      <div class="l-1up">
+        <h1 class="element-invisible">{{ site.name }}</h1>
+        <a href="{{ site.baseurl }}/">
+          <img class="styleguide-header__image" src="{{ site.baseurl }}/assets/imgs/aug-logo.svg" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer class="styleguide-footer">
+    <div class="container">
+      <div class="l-1up">
+        <p><a href="http://www.augie.edu/">{{ site.name }}</a> styleguide by <a href="http://www.palantir.net/">Palantir.net</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  </body>
+</html>

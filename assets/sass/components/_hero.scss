@@ -1,0 +1,72 @@
+/**
+ * @file
+ * Hero Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.hero {
+  background: $white;
+}
+
+.hero p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-inline-figure {
+  width: 100%;
+  padding-top: rhythm(.25);
+}
+.hero-inline-figure--left {
+  padding-top: rhythm(.25);
+  @include breakpoint(540px){
+    float: left;
+    width: 30%;
+    margin-right: rhythm(2);
+    margin-bottom: rhythm(1);
+  }
+}
+.hero-inline-figure--right {
+  padding-top: rhythm(.25);
+  margin-bottom: rhythm(2);
+  @include breakpoint(540px){
+    float: right;
+    width: 40%;
+    margin-left: rhythm(2);
+    margin-bottom: 0;
+  }
+  @include breakpoint(800px){
+    float: right;
+    width: 34%;
+  }
+  @include breakpoint($bp2){
+    float: right;
+    width: 30%;
+    margin-left: $zen-gutter-width;
+  }
+}
+.hero-inline-figure__title {
+  @include adjust-font-size-to($label, 1.5);
+  @include leader(.5, $label);
+  @include trailer(.25, $label);
+  @extend %alright-sans;
+  & a {
+    border-bottom: none;
+  }
+}
+
+.hero__title {
+  @include trailer(.875, $lg-heading);
+}
+.hero__text .call-to-action {
+  @include trailer(.25, $text);
+}
+.hero__links {
+  @include adjust-font-size-to($text, 2);
+  @include breakpoint($bp2){
+    @include adjust-font-size-to($label, 1.75);
+  }
+  & a:after {
+    content: "❯";
+    margin-left: 6px;
+  }
+}

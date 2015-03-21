@@ -1,0 +1,42 @@
+---
+layout: styleguide
+title: Home
+---
+<div class="container">
+  <div class="l-1up styleguide-body">
+    <h1>Site Style Guide</h1>
+
+    <section>
+      <hr />
+      <h2>Elements</h2>
+      <p>Elements are the foundation of the system. Simply using typography and color, well designed Elements can begin to express the site's personality.</p>
+      <ul class="posts">
+        {% for post in site.categories.elements reversed %}
+          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <hr />
+      <h2>Components</h2>
+      <p>Multiple Elements are combined and sometimes modified to create what we call Components. Components are designed to serve specific visual and functional roles within the system.</p>
+      <ul class="posts">
+        {% for post in site.categories.components reversed %}
+          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <hr />
+      <h2>Templates</h2>
+      <p>Based on the needs of the content, Components are arranged into specific layouts to create Templates.<p>
+      <ul class="posts">
+        {% for post in site.categories.templates reversed %}
+          <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> › {{ post.description }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+/**
+ * @file
+ * Illustrated-list Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.illustrated-list {
+  @include leader(2);
+  @include trailer(2);
+}
+.illustrated-list-item {
+  @extend %clearfix;
+  display: block;
+  @include trailer(3, $text);
+}
+.illustrated-list-item__title {
+  font-family: $base-font-family;
+  @include adjust-font-size-to( $h2-font-size, 2.5 );
+  @include leader(0, $h2-font-size);
+  @include trailer(.5, $h2-font-size);
+
+}
+.illustrated-list-item__date {
+  color: $gray-medium;
+  font-weight: 700;
+  &:after {
+    content: '›';
+    font-weight: 400;
+    padding: 0 .25em;
+  }
+}
+.illustrated-list-item__image {
+  float: left;
+  display: block;
+  margin: rhythm(.25, $label) rhythm(1, $label) rhythm(.5, $label) 0;
+  width: 100px;
+  @include breakpoint($bp1){ width: 160px; }
+  @include breakpoint($bp2){ width: 190px; }
+}
+.illustrated-list-item__summary {
+  @include adjust-font-size-to($label, 1.75);
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   Items of interest styles -- OLD
+   ========================================= */
+
+.compact-illustrated-list.interest {
+  background: $off-white-lite;
+  padding-top: rhythm(1.5);
+  padding-bottom: rhythm(.25);
+  & a {
+    color: $link-color;
+    border-bottom: 1px dotted rgba($link-color, .15);
+    &:hover {
+      color: $hover-color;
+      border-bottom: 1px dotted rgba($hover-color, .33);
+    }
+  }
+  .container {
+    @include zen-nested-container();
+  }
+  .compact-illustrated-list__title {
+    margin-top: 0;
+  }
+  hr {
+  margin: 0 0 rhythm(1.25) 0;
+  }
+  .illustrated-list-item__title {
+    margin-bottom: 0;
+    @include adjust-font-size-to($label, 1.5);
+    @include breakpoint(540px){
+      @include adjust-font-size-to($text, 1.75);
+    }
+    @include breakpoint($bp1){
+      @include adjust-font-size-to($label, 1.5);
+    }
+    @include breakpoint(720px){
+      @include adjust-font-size-to($crumb, 1.25);
+    }
+    @include breakpoint($bp2){
+      @include adjust-font-size-to($label, 1.5);
+    }
+    @include breakpoint($bp3){
+      @include adjust-font-size-to($crumb, 1.25);
+    }
+  }
+}

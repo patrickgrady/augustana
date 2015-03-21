@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Side-nav Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.side-bar {
+  margin: rhythm(2) 0 0 0;
+  @include breakpoint(500px){
+    margin: rhythm(2) rhythm(4) rhythm(2) rhythm(4);
+  }
+  @include breakpoint(720px){
+    margin: rhythm(2) rhythm(8) rhythm(2) rhythm(8);
+  }
+  @include breakpoint($bp2){
+    margin: 0;
+  }
+}
+
+.side-nav {
+  @include adjust-font-size-to($label, 3);
+  border: 1px solid $active-40;
+  @include border-radius(3px);
+  a {
+    border-bottom: none;
+  }
+}
+
+.side-nav__navlink {
+  display: block;
+  position: relative;
+  background: $active-20;
+  line-height: 1.25em;
+  padding: rhythm(1.5, $label) rhythm(2.5, $label) rhythm(1, $label) rhythm(1, $label);
+  &:hover {
+    background: $gold;
+    color: $navy;
+  }
+  &.back:before {
+    content: "directleft";
+    font-family: "ssstandard";
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  .ss-icon {
+    position: absolute;
+    right: rhythm(1.5, $label);
+    top: 50%;
+    font-size: 75%;
+  }
+  .test {
+    position: relative;
+    top: rhythm(-.5, $label);
+  }
+}
+
+.side-nav__navlink ~ .side-nav__navlink {
+  border-top: 1px solid $active-40;
+}
+
+.related-links {
+  @include adjust-font-size-to($label, 2.25);
+  padding: rhythm(1, $label) rhythm(1, $label) rhythm(1, $label) rhythm(1, $label);
+  //border: 1px solid $active;
+}
+.related-links a {
+  display: block;
+  border-bottom: none;
+  line-height: 1.25em;
+  padding: rhythm(.5, $label) 0
+}
+
+.related-links h6 {
+  border-bottom: 1px solid $rules;
+  margin-top: .75em;
+  padding-bottom: .75em;
+}
+.related-nav__navlink {
+}

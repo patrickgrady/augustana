@@ -1,0 +1,52 @@
+/**
+ * @file
+ * Homepage-item Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.homepage-item {
+  background: $white;
+}
+
+.homepage-item__image.feature {
+  margin-bottom: rhythm(1.5);
+  padding-bottom: 50%;
+  @include breakpoint(720px){ padding-bottom: 150%; }
+  @include breakpoint(900px){ padding-bottom: 125%; }
+  @include breakpoint($bp3){ padding-bottom: 75%; }
+}
+
+.homepage-item__links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+    border-top: none;
+    border-left: 1px solid $rules;
+    padding-top: 0;
+    padding-left: rhythm(1.75);
+    margin-top: rhythm(1);
+  @include breakpoint($bp3){
+    border-top: none;
+    border-left: 1px solid $rules;
+    padding-top: 0;
+    padding-left: rhythm(1.75);
+    margin-top: 0;
+  }
+}
+.homepage-item__links li {
+  @include adjust-font-size-to( $text, 1.5);
+  @include trailer(.75, $text);
+  @include breakpoint($bp1){
+    @include adjust-font-size-to( $label, 1.5);
+    @include trailer(.75, $label);
+  }
+}
+.homepage-item__links li a {
+  border-bottom: none;
+  & .ss-icon {
+    font-size: 66%;
+    line-height: 0;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+}

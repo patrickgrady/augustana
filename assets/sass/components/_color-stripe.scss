@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Color-stripe Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+ .color-stripe {
+  @extend %clearfix;
+
+  .block-1 {
+    float: left;
+    background: $navy-80;
+    width: 16.66%;
+    height: 6px;
+  }
+  .block-2 {
+    float: left;
+    background: $active;
+    width: 16.66%;
+    height: 6px;
+  }
+  .block-3 {
+    float: left;
+    background: $active-20;
+    width: 16.66%;
+    height: 6px;
+  }
+  .block-4 {
+    float: left;
+    background: $gold;
+    width: 50%;
+    height: 6px;
+  }
+}

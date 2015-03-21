@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Metadata Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.metadata {
+  @include adjust-font-size-to($label, 1);
+  @include trailer(.5, $label);
+  color: $gray-medium;
+}
+
+.month {
+  font-size: 92%;
+  text-transform: uppercase;
+}
+
+.metadata--event {
+  @include adjust-font-size-to($crumb, 1);
+  padding: rhythm(.5, $crumb) rhythm(.325, $crumb) rhythm(.25, $crumb);
+  background: $gold;
+  color: $black;
+  display: inline-block;
+}
+
+.metadata--social {
+  @include adjust-font-size-to($label, 1);
+  color: $black;
+  font-weight: bold;
+}

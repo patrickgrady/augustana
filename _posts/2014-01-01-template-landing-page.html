@@ -1,0 +1,47 @@
+---
+published: false
+layout: default
+title: Landing Page
+description: The landing page template is used by each of the main navigation items. It is meant to feature some timely content relevant to the current section, and provide access to the content within.
+categories: Templates
+id-name: landing
+---
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-landing-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.5"></div>
+
+<div class="container page">
+  <article class="l-66-33--1">
+    <header class="">
+      <h1>About Augustana</h1>
+    </header>
+    <p>Founded in 1860, Augustana is a selective, private, residential, comprehensive (liberal arts and professional) college of the Evangelical Lutheran Church in America. Central to our mission are five core values — <em>Christian</em>, <em>Liberal Arts</em>, <em>Excellence</em>, <em>Community</em> and <em>Service</em> — that serve as the foundation for the College’s academic and student life programs.</p>
+
+    <!--
+      <div class="video-wrapper">
+      <iframe width="853" height="480" src="//www.youtube.com/embed/pA-reP56cms?list=PLOvknrj6C1yqB0HX7CLI9Aqvg5kRJqhHd" frameborder="0" allowfullscreen></iframe>
+      </div>
+    -->
+
+    <figure>
+      <div class="video-wrapper">
+        <iframe src="//player.vimeo.com/video/73878189?title=0&amp;byline=0&amp;portrait=0&amp;color=e7e714" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/73878189">Go Viking: Explore</a> from <a href="http://vimeo.com/augustanacollegesd">Augustana College (SD)</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+      </div>
+      <figcaption>
+        Learn about the Augustana campus and the city of Sioux Falls. Named the No. 1 "Best Small Place for Business and Careers" by Forbes, Sioux Falls is at the intersection between the rugged beauty of the Black Hills of South Dakota and the urban skylines of Minneapolis, Minnesota.
+      </figcaption>
+    </figure>
+
+    <h2>A Focus on What Matters</h2>
+
+    <p>Augustana offers more than <a href="#">50 majors and pre-professional specializations</a> within a <a href="#">4-1-4 academic calendar</a>. Extensive <a href="#">internship</a>, <a href="#">study abroad</a>, <a href="#">undergraduate research</a> and <a href="#">Civitas, the College’s Honors Program</a>, supplement the curriculum. Our academic programs promote sensitivity to and appreciation of values essential for students to become effective citizens in local, national and international communities.</p>
+
+    <p>Questions of faith and values blend comfortably into all aspects of life at Augustana. Because the Lutheran tradition values every student’s gift for learning, academic integrity is never compromised by slanting education to agree with a particular religious bias. All faith traditions are welcome here. By encouraging students to make career decisions that are consistent with their own faith and values, Augustana educates students for a wide range of careers and professional callings.</p>
+
+  </article>
+
+  <aside class="l-66-33--2">
+    {% include side-nav--about.html %}
+  </aside>
+</div>
+
+{% include feature--stripe.html %}

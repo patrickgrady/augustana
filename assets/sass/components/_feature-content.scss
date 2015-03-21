@@ -1,0 +1,160 @@
+/**
+ * @file
+ * Featured-content Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.feature {
+  display: block;
+  border-bottom: none !important;
+  position: relative;
+  height: 0; // important
+  padding-bottom: 50%;
+  @include breakpoint($bp2){ padding-bottom: 125%; }
+  @include breakpoint($bp3){ padding-bottom: 75%; }
+  &:hover {
+    .feature__title {
+      color: $gold;
+    }
+  }
+}
+
+.feature__image--1 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/sioux-falls-2.jpg")); }
+.feature__image--2 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/miller.jpg")); }
+.feature__image--3 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/marit.jpg")); }
+.feature__image--4 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/Terry-Williams.jpg")); }
+.feature__image--5 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/school.jpg")); }
+.feature__image--6 { @include background(linear-gradient(bottom, rgba(#000000,.9), rgba(#000000,.12)50%), image-url("../imgs/met.jpg")); }
+.feature__image--7 { @include background(linear-gradient(bottom, rgba(#000000,.8), rgba(#000000,.12)50%), image-url("../imgs/concert.jpg")); }
+.feature__image--8 { @include background(linear-gradient(bottom, rgba(#000000,.8), rgba(#000000,.12)50%), image-url("../imgs/students.jpg")); }
+.feature__image--9 { @include background(linear-gradient(bottom, rgba(#000000,.8), rgba(#000000,.12)50%), image-url("../imgs/miller-2.jpg")); }
+div[class^="feature__image--"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include background-size(cover);
+  background-position: 50% 50%;
+}
+
+.feature__banner {
+  position: absolute;
+  padding: rhythm(1.25, $text);
+  bottom: 0;
+}
+.feature__metadata {
+  @include adjust-font-size-to( $crumb, 1);
+  @include text-shadow(rgba($black, 0.5) 1px 1px 1px);
+  margin: rhythm( .5, $crumb) 0 0 0;
+  color: $white;
+  a:link,
+  a:visited,
+  a:hover,
+  a:focus,
+  a:active {
+    color: $gold;
+    border-bottom: 0px;
+  }
+}
+.feature__metadata--event {
+  @include adjust-font-size-to( $crumb, 1);
+  padding: rhythm(.5, $crumb) rhythm(.325, $crumb) rhythm(.25, $crumb);
+  background: $gold;
+  color: $black;
+  display: inline-block;
+}
+.feature__title {
+  @include adjust-font-size-to( $text, 1.75);
+  @include trailer(0, $text);
+  @include text-shadow(rgba($black, 0.5) 1px 1px 1px);
+  font-family: $base-font-family;
+  color: $white;
+  margin: 0;
+  @include trans($timing, $easing);
+  &:hover {
+    color: $gold;
+    border-bottom: 0px;
+  }
+}
+
+
+
+#home .page .feature {
+  margin-bottom: rhythm(1.5);
+  padding-bottom: 50%;
+  @include breakpoint(720px){ padding-bottom: 100%; }
+  @include breakpoint($bp3){ padding-bottom: 75%; }
+}
+
+
+
+.l-feature {
+  float: left;
+  width: 100%;
+  @include breakpoint($bp2){ width: 50%; }
+}
+.l-feature__list {
+	float: right;
+	width: 100%;
+	margin-top: rhythm(1, $label);
+	@include breakpoint($bp2){
+		margin-top: 0;
+		width: 45%;
+	}
+}
+
+.feature__list-title {
+	@include adjust-font-size-to($sm-heading, 2);
+	//@include trailer(1.5, $sm-heading);
+	font-weight: 700;
+	//padding-bottom: rhythm(1, $sm-heading);
+	//border-bottom: 1px solid $active-40;
+	a {
+		border-bottom: 0;
+	}
+}
+.feature__list-item {
+	@include trailer(.75, $label);
+}
+.feature__list-item-title {
+	@extend %alright-sans;
+	@include adjust-font-size-to($label, 1.5);
+}
+.feature__list-item-metadata {
+	@include adjust-font-size-to($crumb, 1.5);
+	display: block;
+	color: $gray-medium;
+	font-weight: 400;
+}
+
+
+
+.feature--single {
+  display: block;
+  border-bottom: none !important;
+  position: relative;
+  height: 0; // important
+  padding-bottom: 50%;
+  @include trailer(2, $text);
+}
+.feature--single__title {
+  @include adjust-font-size-to($md-heading, 2.5);
+  @include trailer(0, $md-heading);
+  @include text-shadow(rgba($black, 0.5) 1px 1px 1px);
+  font-family: $base-font-family;
+  color: $white;
+  margin: 0;
+  @include trans($timing, $easing);
+  a:link,
+  a:visited {
+    color: $white;
+    border-bottom: 0px;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    color: $gold;
+    border-bottom: 0px;
+  }
+}

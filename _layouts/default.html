@@ -1,0 +1,78 @@
+<!--wraps every page and renders jekyll content in the middle. Includes imageScroll.js and mobile slider-nav js.-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ site.name }} : {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/modernizr.custom.22576.js"></script>
+    <!-- Scripts for RRSB -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/vendor/jquery.1.10.2.min.js"><\/script>')</script>
+    <script src="{{ site.baseurl }}/assets/js/rrssb.min.js"></script>
+  </head>
+
+  <body id="{{ page.id-name }}">
+    <div class="nav-slider">
+      <a class="trigger button" href="#">Close &#10005;</a>
+      <form class="search--header is-mobile">
+        <input placeholder="Search..." class="" type="search" id="site-search">
+        <button type="button" value="Search" id="search--header__button"><i class="ss-icon ss-standard">Search</i></button>
+      </form>
+      <nav>
+        <a class="navlink is-active" href="#">Home</a>
+        <a class="navlink" href="#">About</a>
+        <a class="navlink" href="#">Admissions</a>
+        <a class="navlink" href="#">Academics</a>
+        <a class="navlink" href="#">Student Life</a>
+        <a class="navlink" href="#">Sioux Falls</a>
+        <a class="navlink" href="#">Athletics</a>
+        <a class="navlink" href="#">The Arts</a>
+      </nav>
+      <nav>
+        <a class="navlink" href="#">Current Students</a>
+        <a class="navlink" href="#">Faculty &amp; Staff</a>
+        <a class="navlink" href="#">Parents</a>
+        <a class="navlink off-site" href="#">Alumni</a>
+      </nav>
+      <nav>
+        <a class="navlink" href="#">Make a Gift</a>
+        <a class="navlink" href="#">View Calendar</a>
+      </nav>
+    </div>
+    <div class="content-wrapper">
+      {% include site-header.html %}
+      {{ content }}
+      {% include site-footer.html %}
+    </div>
+
+    <!-- Adds jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Triggers mobile nav effect -->
+    <script type="text/javascript">
+      $(function() {
+          $(".trigger").click(function() {
+              $(".nav-slider").toggleClass("nav-slider--show");
+              $(".content-wrapper").toggleClass("content-wrapper--move");
+              $("").toggleClass("");
+              return false;
+          });
+      });
+    </script>
+    <!-- Parallax scroll effect -->
+    <script src="{{ site.baseurl }}/assets/js/jquery.imageScroll.js"></script>
+    <!-- detects for touch and serves non-parallax version -->
+    <script type="text/javascript">
+    var touch = Modernizr.touch;
+    $('.img-holder').imageScroll({
+      //cut smaller images and add "data-image-mobile:" attribute for image swap
+      //imageAttribute: (touch === true) ? 'image-mobile' : 'image',
+      touch: touch
+    });
+    </script>
+
+  </body>
+</html>

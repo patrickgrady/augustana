@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Styles for parallax scroll proof of concept
+ */
+
+#parallax {
+  header,
+  footer {
+    background: $navy;
+  }
+  header {
+    height: 96px;
+  }
+  footer {
+    height: 288px;
+  }
+
+  h1 {
+    margin-bottom: .25em;
+  }
+
+  .text-area {
+    margin: 3em;
+  }
+}

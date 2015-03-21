@@ -1,0 +1,48 @@
+---
+layout: default
+title: Landing Page (Option 3)
+description: The landing page template is used by each of the main navigation items. It is meant to feature some timely content relevant to the current section, and provide access to more content within section.
+categories: Templates
+id-name: landing
+---
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-landing-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.5"></div>
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">About Augustana</h1>
+    <article class="hero-inline-figure--right">
+      <a href="#"><img src="{{ site.baseurl }}/assets/imgs/sioux-falls-2-16x9.jpg"/></a>
+      <h1 class="hero-inline-figure__title">
+        <a href="#">Forbes Gives Top Marks to Sioux Falls and Augustana</a>
+      </h1>
+    </article>
+    <p>Founded in 1860, Augustana is a selective, private, residential, comprehensive (liberal arts and professional) college of the Evangelical Lutheran Church in America. Central to our mission are five core values — <em>Christian</em>, <em>Liberal Arts</em>, <em>Excellence</em>, <em>Community</em> and <em>Service</em> — that serve as the foundation for the College’s academic and student life programs.</p>
+  </div>
+</section>
+
+<section class="page--offwhite">
+  <div class="container">
+    <article class="l-66-33--1">
+
+      <h2>A Focus on What Matters</h2>
+
+      {% include in-this-section.html %}
+
+      <p>Augustana offers more than <a href="#">50 majors and pre-professional specializations</a> within a <a href="#">4-1-4 academic calendar</a>. Extensive <a href="#">internship</a>, <a href="#">study abroad</a>, <a href="#">undergraduate research</a> and <a href="#">Civitas, the College’s Honors Program</a>, supplement the curriculum. Our academic programs promote sensitivity to and appreciation of values essential for students to become effective citizens in local, national and international communities.</p>
+
+      <p>Questions of faith and values blend comfortably into all aspects of life at Augustana. Because the Lutheran tradition values every student’s gift for learning, academic integrity is never compromised by slanting education to agree with a particular religious bias. All faith traditions are welcome here. By encouraging students to make career decisions that are consistent with their own faith and values, Augustana educates students for a wide range of careers and professional callings.</p>
+
+      <h3>A Focus on What Matters</h3>
+
+      <p>Augustana offers more than <a href="#">50 majors and pre-professional specializations</a> within a <a href="#">4-1-4 academic calendar</a>. Extensive <a href="#">internship</a>, <a href="#">study abroad</a>, <a href="#">undergraduate research</a> and <a href="#">Civitas, the College’s Honors Program</a>, supplement the curriculum. Our academic programs promote sensitivity to and appreciation of values essential for students to become effective citizens in local, national and international communities.</p>
+
+      {% include note--left.html %}
+
+      <p>Questions of faith and values blend comfortably into all aspects of life at Augustana. Because the Lutheran tradition values every student’s gift for learning, academic integrity is never compromised by slanting education to agree with a particular religious bias. All faith traditions are welcome here. By encouraging students to make career decisions that are consistent with their own faith and values, Augustana educates students for a wide range of careers and professional callings.</p>
+    </article>
+
+    <aside class="l-66-33--2">
+      {% include side-nav--about.html %}
+    </aside>
+  </div>
+</section>

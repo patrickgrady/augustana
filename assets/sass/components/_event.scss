@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Event Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.event-details {
+  @extend %featured;
+  @include trailer(1.5, $text);
+  hr {
+    margin: 0 0 rhythm(.75, $crumb) 0;
+  }
+}
+.event-details__title {
+  @include adjust-font-size-to($crumb, .75);
+  @include leader(0);
+}
+.event-details__info {
+  @include adjust-font-size-to($label, 1.5);
+}
+.event-details__call-to-action {
+  @extend %call-to-action;
+  @include leader(0);
+  @include trailer(0);
+}
+
+.event-contact {
+  @include adjust-font-size-to($label, 1.5);
+}

@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Layout rules for compact list content
+ */
+
+.l-compact-illustrated-list--1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint(640px){
+    @include zen-grid-item(10,2);
+  }
+  @include breakpoint(800px){
+    @include zen-grid-item(6,1);
+  }
+}
+.l-compact-illustrated-list--2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint(640px){
+    @include zen-grid-item(10,2);
+  }
+  @include breakpoint(800px){
+    @include zen-clear(none);
+    @include zen-grid-item(6,7);
+  }
+}
+
+.compact-illustrated-list.interest {
+  .l-compact-illustrated-list--1 {
+    @include zen-clear();
+    @include zen-grid-item(12,1);
+    @include breakpoint(720px){
+      @include zen-grid-item(6,1);
+    }
+    @include breakpoint($bp2){
+      @include zen-clear();
+      @include zen-grid-item(12,1);
+    }
+    @include breakpoint($bp3){
+      @include zen-grid-item(6,1);
+    }
+  }
+  .l-compact-illustrated-list--2 {
+    @include zen-clear();
+    @include zen-grid-item(12,1);
+    @include breakpoint(720px){
+      @include zen-clear(none);
+      @include zen-grid-item(6,7);
+    }
+    @include breakpoint($bp2){
+      @include zen-clear();
+      @include zen-grid-item(12,1);
+    }
+    @include breakpoint($bp3){
+      @include zen-clear(none);
+      @include zen-grid-item(6,7);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Layout rules for homepage item version 2
+ */
+
+.l-home-v2--1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint(680px){
+    @include zen-grid-item(6,1);
+  }
+  @include breakpoint(800px){
+    @include zen-grid-item(5,1);
+  }
+}
+
+.l-home-v2--2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint(680px){
+    @include zen-clear(none);
+    @include zen-grid-item(6,1,right);
+  }
+  @include breakpoint(800px){
+    @include zen-clear(none);
+    @include zen-grid-item(7,1,right);
+  }
+}
+
+.l-home-v2--2.is-without-links {
+  @include breakpoint($bp3){
+    @include zen-clear(none);
+    @include zen-grid-item(7,6);
+  }
+}
+.l-home-v2--3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint(680px){
+    @include zen-clear(right);
+    @include zen-grid-item(6,1,right);
+  }
+  @include breakpoint(800px){
+    @include zen-clear(right);
+    @include zen-grid-item(7,1,right);
+  }
+}

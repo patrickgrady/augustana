@@ -1,0 +1,62 @@
+/**
+ * @file
+ * In-this-section Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.in-this-section {
+  @extend %featured;
+  @include trailer(1, $text);
+  @include breakpoint(540px){
+    float: right;
+    width: 320px;
+    margin-left: rhythm(2);
+  }
+  & a {
+    color: $link-color;
+    border-bottom: 1px dotted rgba($link-color, .15);
+    &:hover {
+      color: $hover-color;
+      border-bottom: 1px dotted rgba($hover-color, .33);
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  hr {
+    margin: 0 0 rhythm(.75, $crumb) 0;
+  }
+  .in-this-section-item {
+    @extend %clearfix;
+    @include trailer(1, $text);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.in-this-section__title {
+  @include adjust-font-size-to($crumb, .75);
+  @include leader(0);
+}
+.in-this-section-item__image {
+  float: left;
+  width: 108px;
+  margin-right: rhythm(1, $text);
+}
+.in-this-section-item__title {
+  @extend %alright-sans;
+  margin-bottom: 0;
+  @include adjust-font-size-to($label, 1.5);
+  @include breakpoint($bp1){
+    @include adjust-font-size-to($crumb, 1.25);
+  }
+  @include breakpoint($bp2){
+    @include adjust-font-size-to($crumb, 1.125);
+  }
+  & a {
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}

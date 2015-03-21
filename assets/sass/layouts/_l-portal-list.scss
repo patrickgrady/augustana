@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Layout rules for 3-up portal-list content
+ * @copyright Copyright (c) 2013 Palantir.net
+ */
+
+ .l-portal-list {
+   @include zen-clear();
+ }
+
+// =============================================================================
+// Ruleset for content going from 1-column at mobile,
+// to two-column, to 3-column as horizontal space allows
+// $omega-gutter: "false" = will wrap an item
+// $omega-gutter: "true"  = will not wrap an item
+// =============================================================================
+
+.l-portal-list-item {
+  float: left;
+  @include zen-grid-item-base();
+  @include zen-grid-flow-item(12, 12, $omega-gutter: false);
+  @include breakpoint(500px){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: true);
+  }
+  @include breakpoint(740px){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: true);
+  }
+}
+// make every 2nd list item wrap
+.l-portal-list-item:nth-of-type(2n) {
+  @include breakpoint(500px){
+    @include zen-grid-flow-item(6, 12, $omega-gutter: false);
+  }
+  @include breakpoint(740px){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: true);
+  }
+}
+// make every 3rd list item wrap
+.l-portal-list-item:nth-of-type(3n) {
+  @include breakpoint(740px){
+    @include zen-grid-flow-item(4, 12, $omega-gutter: false);
+  }
+}
+// clears a new row from the tallest element in the row above
+.l-portal-list-item:nth-of-type(3n+1) {
+  @include breakpoint(740px){
+    @include zen-clear();
+  }
+}

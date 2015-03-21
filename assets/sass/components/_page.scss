@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Page Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+// Dynamically alters the top and bottom padding on for page
+%page,
+.page {
+  padding-top: ($zen-gutter-width / 1.5);
+  padding-bottom: ($zen-gutter-width / 1.5);
+  @include breakpoint($bp2){
+    padding-top: $zen-gutter-width;
+    padding-bottom: $zen-gutter-width;
+  }
+}
+
+.page--offwhite {
+  @include background(linear-gradient(top, lighten($off-white, 1%), $white $zen-gutter-width));
+	//background: $off-white-lite;
+  padding-top: ($zen-gutter-width / 1.5);
+  padding-bottom: ($zen-gutter-width / 1.5);
+  @include breakpoint($bp2){
+    padding-top: $zen-gutter-width;
+    padding-bottom: $zen-gutter-width;
+  }
+}

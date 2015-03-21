@@ -1,0 +1,54 @@
+  <header class="site-header">
+    <div class="container">
+      <div class="l-1up">
+        <header class="element-invisible">
+          <h1>Header</h1>
+        </header>
+
+        <a href="{{ site.baseurl }}/" class="site-logo"></a>
+
+        <nav class="nav--mobile">
+          <header class="element-invisible">
+            <h2>Mobile Navigation</h2>
+          </header>
+          <!--<a class="button"href="#"><i class="ss-icon ss-standard">search</i></a>-->
+          <a class="trigger button" href="#"><span class="menu">Menu &#9776;</span></a>
+        </nav>
+
+        <nav class="nav--primary">
+          <header class="element-invisible">
+            <h2>Primary Navigation</h2>
+          </header>
+          <a class="" href="#">About</a>
+          <a class="" href="#">Admission</a>
+          <a class="" href="#">Academics</a>
+          <a class="" href="#">Student Life</a>
+          <a class="" href="#">Sioux Falls</a>
+          <a class="" href="#">Athletics</a>
+          <a class="" href="#">The Arts</a>
+        </nav>
+
+        <div class="nav--secondary">
+          <header class="element-invisible">
+            <h2>Secondary Navigation</h2>
+          </header>
+          <nav class="nav--secondary__portals">
+            <a class="" href="#">Current Students</a>
+            <a class="" href="#">Faculty &amp; Staff</a>
+            <a class="" href="#">Parents</a>
+            <a class="off-site" href="#">Alumni</a>
+          </nav>
+          <nav class="nav--secondary__utilities">
+            <a class="gift" href="#">Make a Gift</a>
+            <a class="calendar" href="#">View Calendar</a>
+            <form class="search--header">
+              <input placeholder="Search..." class="" type="search" id="site-search">
+              <button type="button" value="Search" id="search--header__button"><i class="ss-icon ss-standard">Search</i></button>
+            </form>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  {% include color-stripe.html %}
+  </header>

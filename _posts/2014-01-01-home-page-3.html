@@ -1,0 +1,80 @@
+---
+layout: default
+title: Home Page (Option 3)
+description: The home page is targeted primarily at new users. It communicates high-level benefits, differentiators, featured content, and aims to direct users to more content deeper within the site.
+categories: Templates
+id-name: home-v3
+---
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp1-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.5"></div>
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">Welcome to Augustana</h1>
+
+    <figure class="hero-inline-figure--right">
+      <div class="video-wrapper">
+        <iframe src="//player.vimeo.com/video/73878189?title=0&amp;byline=0&amp;portrait=0&amp;color=e7e714" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <figcaption>
+        Learn what attending Augustana is <em>really</em> like directly from some of our current students and recent grads.
+      </figcaption>
+    </figure>
+    <p class="hero__text">We are a <a href="#">nationally-recognized</a> and <a href="#">top-ranked</a> liberal arts school located in Sioux Falls South Dakota situated between the rugged beauty of the Black Hills and the urban skylines of Minneapolis. For those who aspire for more than the ordinary, we invite you to <em><a href="#">Go Viking!</a></em><br/>
+    <a class="call-to-action" href="#">More About Augustana</a></p>
+  </div>
+</section>
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp2-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.66"></div>
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">Explore the Community</h1>
+    <article class="hero-inline-figure--right">
+      <a href="#"><img src="{{ site.baseurl }}/assets/imgs/sioux-falls-2-16x9.jpg"/></a>
+      <h1 class="hero-inline-figure__title">
+        <a href="#">Forbes Gives Top Marks to Sioux Falls and Augustana</a>
+      </h1>
+    </article>
+    <p class="hero__text">We call it “the ultimate college town” because it is! Our location in Sioux Falls, a city of more than 160,000 known for its robust economy, thriving business environment and vibrant arts scene, leads to choice internship, clinical, research, student teaching and service experiences for our students. On campus, you'll explore your interests and find your passion from more than 50 majors and pre-professional specializations within a 4-1-4 academic calendar while building connections and friendships with nearly 1,800 students from 30 states and 44 countries around the globe. <a href="#">Learn what Forbes had to say about Sioux Falls and Augustana</a>.</p>
+  </div>
+</section>
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp3-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.66"></div>
+
+{% include hero.html %}
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp4-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.66"></div>
+
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">Create Your Experience</h1>
+    <article class="hero-inline-figure--right">
+      <a href="#"><img src="{{ site.baseurl }}/assets/imgs/marit-16x9.jpg"/></a>
+      <h1 class="hero-inline-figure__title">
+        <a href="#">Freshman Earns Internship at the Metropolitan Museum of Art</a>
+      </h1>
+    </article>
+    <p class="hero__text">At Augustana, you'll have the support you need to create personalized educational experiences through recreational sports, residential communities, clubs and organizations, student teaching, off-campus study, hands-on research, the Civitas honors program, study abroad programs and internships. <a href="#">Learn about freshman Marit Lhotzky and her upcoming summer internship at the Metropolitan Museum of Art in New York City</a>.</p>
+    <ul class="hero__links">
+      <li><a href="#">Student Life</a></li>
+      <li><a href="#">Internship Opportunities</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="img-holder" data-image="{{ site.baseurl }}/assets/imgs/bg-hp5-2.jpg" data-width="1600" data-height="900" data-cover-ratio="0.66"></div>
+
+<section class="container page hero">
+  <div class="l-1up">
+    <h1 class="hero__title">Go Viking!</h1>
+    <article class="hero-inline-figure--right">
+      <a href="#"><img src="{{ site.baseurl }}/assets/imgs/students-16x9.jpg"/></a>
+      <h1 class="hero-inline-figure__title">
+        <a href="#">Augustana Reports 98% Job Placement for Second Year in a Row</a>
+      </h1>
+    </article>
+    <p class="hero__text">Our high four-year graduation rates, annual scholarship/grant assistance, and competitive price, makes Augustana College an exceptional value with immeasurable returns over a lifetime. In fact, ninety-eight percent of our recent graduates reported they had jobs related to their field of study within eight months of graduation. <a href="#">Read more about our job placement rates</a>.<br/>
+    <a class="call-to-action" href="#">How to Apply</a></p>
+  </div>
+</section>
+
+{% include illustrated-list--compact.html %}

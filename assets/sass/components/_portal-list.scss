@@ -1,0 +1,31 @@
+/**
+ * @file
+ * Portal-list Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.portal-list {
+  @extend %clearfix;
+}
+
+.portal-list-item {
+}
+
+.portal-list-item__title {
+  @include adjust-font-size-to($label,1.5);
+  @include leader(.75, $label);
+  @include trailer(.75, $label);
+  @include breakpoint(480px) {
+    @include leader(.5, $label);
+    @include trailer(.5, $label);
+  }
+  @include breakpoint($bp1) {
+    @include adjust-font-size-to($crumb,1.5);
+    @include leader(.5, $crumb);
+    @include trailer(.5, $crumb);
+  }
+  @include breakpoint($bp1) {
+    @include leader(.25, $crumb);
+    @include trailer(.25, $crumb);
+  }
+}

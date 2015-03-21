@@ -1,0 +1,50 @@
+/*!
+ * @file
+ * Accordion Component (SMACSS module) partial
+ * @copyright Copyright (c) 2014 Palantir.net
+ */
+
+.accordion-container {
+  display: none;
+}
+.accordion-parent {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.accordion-child {
+  margin: 0;
+  padding: 0;
+  @include leader(1.25, $label);
+  @include trailer(1.25, $label);
+  @extend %clearfix;
+}
+.accordion-trigger {
+  display: block;
+  @include adjust-font-size-to($text,1.5);
+  font-weight: bold;
+  padding: rhythm(1) 0;
+  @include breakpoint($bp2){
+    padding: rhythm(1) 0;
+  }
+  border-bottom: 1px solid $rules !important;
+  &:hover {
+    color: $black !important;
+  }
+}
+.accordion-trigger.is-closed:after {
+  content: "+";
+  @include adjust-font-size-to($text,1.5);
+  vertical-align: middle;
+  float: right;
+}
+.accordion-trigger.is-open {
+  color: $black !important;
+  &:after {
+    content: "–";
+    @include adjust-font-size-to($text,1.5);
+    vertical-align: middle;
+    float: right;
+  }
+}

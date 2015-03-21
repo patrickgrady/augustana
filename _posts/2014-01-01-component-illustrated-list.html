@@ -1,0 +1,23 @@
+---
+layout: post
+title: Illustrated List
+description: Lists of News and Events content is displayed in lists that include title, metadata, thumbnail images and summary text.
+categories: Components
+---
+<section class="styleguide-example">
+  <div class="container">
+    <div class="l-66-33--1">
+      {% include illustrated-list--news.html %}
+      {% include illustrated-list--events.html %}
+    </div>
+  </div>
+</section>
+
+<section class="styleguide-markup container">
+  <div class="l-1up">
+{% highlight html %}
+{% include illustrated-list--news.html %}
+{% include illustrated-list--events.html %}
+{% endhighlight %}
+  </div>
+</section>

@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Layout rules for 4-up FOOTER content
+ */
+
+// ====================================================================
+// Ruleset for content going from 1-column at mobile,
+// to two-column, to 4-column as horizontal space allows
+// $omega-gutter: "false" = will wrap an item
+// $omega-gutter: "true"  = will not wrap an item
+// ===================================================================
+
+.l-site-footer {
+  .l-4up {
+    float: left;
+    @include zen-grid-item-base();
+    @include zen-grid-flow-item(12, 12, $omega-gutter: false);
+    @include breakpoint(480px){
+      @include zen-grid-flow-item(6, 12, $omega-gutter: true);
+    }
+    @include breakpoint(850px){
+      @include zen-grid-flow-item(3, 12, $omega-gutter: true);
+    }
+  }
+  // make every 2nd list item wrap
+  .l-4up:nth-of-type(2n) {
+    @include breakpoint(480px){
+      @include zen-grid-flow-item(6, 12, $omega-gutter: false);
+    }
+    @include breakpoint(850px){
+      @include zen-grid-flow-item(3, 12, $omega-gutter: true);
+    }
+  }
+  // make every 4th list item wrap
+  .l-4up:nth-of-type(4n) {
+    @include breakpoint(850px){
+      @include zen-grid-flow-item(3, 12, $omega-gutter: false);
+    }
+  }
+  // clears a new row from the tallest element in the row above
+  .l-4up:nth-of-type(4n+1) {
+    @include breakpoint(850px){
+      @include zen-clear();
+    }
+  }
+}

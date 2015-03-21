@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Layout rules for 4-up Landing page feature content
+ */
+
+.l-4up-feature {
+  float: left;
+  width: 100%;
+  @include breakpoint($bp1){ width: 50%; }
+  @include breakpoint($bp2){ width: 25%; }  
+}
